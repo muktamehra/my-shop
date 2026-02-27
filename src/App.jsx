@@ -11,6 +11,7 @@ function App() { // ← this is a React component
   const [cart, setCart] = useState([])
   const [cartTotal, setCartTotal] = useState(0)
   const [filter, setFilter] = useState('all')
+  const [sort, setSort] = useState('default')
   const products = [
     {id: 1, name: "Winter Coat", price: 30, image: "images/jacket.jpg", description: " A great all year round jacket"},
     {id: 2, name: "Summer Dress", price: 60, image: "images/dress.jpg", description: " A beautiful red dress"},
@@ -51,6 +52,12 @@ function App() { // ← this is a React component
     if (filter === 'over50') return product.price > 50
   })
 
+  const sortedProducts = [...filteredProducts].sort(function(a, b) {
+    if ( sort === 'low') return a.price -b.price
+    if ( sort === 'high') return b.price -a.price
+    return 0
+  })
+
 
   return (     //← everything inside here shows on the page
     <div>
@@ -61,8 +68,14 @@ function App() { // ← this is a React component
         <button onClick={() => setFilter('under50')}>Under $50</button>
         <button onClick={() => setFilter('over50')}>Over $50</button>
       </div>
+
+      <div className='sort'>
+        <button onClick={() => setSort('default')}>Default</button>
+        <button onClick={() => setSort('low')}>Price Low to High</button>
+        <button onClick={() => setSort('high')}>Price High to Low</button>
+      </div>
       <div className="cards">
-        {filteredProducts.map(function(product) {
+        {sortedProducts.map(function(product) {
           return (
             <ProductCard
             key={product.id}

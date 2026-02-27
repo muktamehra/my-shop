@@ -18,3 +18,25 @@
 .filters button:hover {
   background-color: #000000;
 }
+
+.sort {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 0 24px 24px;
+}
+
+.sort button {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #333333;
+  padding: 10px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sort button:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
