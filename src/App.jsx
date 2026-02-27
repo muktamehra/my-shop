@@ -33,10 +33,19 @@ function App() { // ← this is a React component
       setCart([...cart, { name: name, price: price, quantity: 1 }])
     }
   }
-  
+
+  // add reduce here
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+
+  // The above code can be written as this as well:
+  // const total = cart.reduce(function(sum, item) {
+  // return sum + item.price * item.quantity
+  // }, 0)
+
+
   return (     //← everything inside here shows on the page
     <div>
-      <Header cartTotal={cartTotal} />
+      <Header cartTotal={cartTotal} total={total} />
       <Hero />
       <div className="cards">
         {products.map(function(product) {
