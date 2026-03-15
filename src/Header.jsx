@@ -1,6 +1,20 @@
 import './Header.css'
+import { useEffect, useRef } from 'react'
 
 function Header({ cartTotal, total, cart, cartOpen, setCartOpen, search, setSearch, removeFromCart }) {
+  const cartRef = useRef(null)
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (cartRef.current && !cartRef.current.contains(e.target)) {
+        setCartOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
     return (
         <header>
         <h1>My Shop</h1>
@@ -15,7 +29,7 @@ function Header({ cartTotal, total, cart, cartOpen, setCartOpen, search, setSear
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         />
-        <div className='cart-wrapper'>
+        <div className='cart-wrapper' ref={cartRef}>
             <span 
             className='cart-icon'
             onClick={() => setCartOpen(!cartOpen)}>
