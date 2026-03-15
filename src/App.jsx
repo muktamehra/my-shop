@@ -14,9 +14,9 @@ function App() { // ← this is a React component
   const [cartOpen, setCartOpen] = useState(false)
   const [search, setSearch] = useState('')
   const products = [
-    {id: 1, name: "Winter Coat", price: 30, image: "images/jacket.jpg", description: " A great all year round jacket"},
-    {id: 2, name: "Summer Dress", price: 60, image: "images/dress.jpg", description: " A beautiful red dress"},
-    {id: 3, name: "Comfortable Shoes", price: 45, image: "images/shoes.jpg", description: " A pair of comfortable shoes"}
+    {id: 1, name: "Winter Coat", price: 30, image: "images/jacket.jpg"},
+    {id: 2, name: "Summer Dress", price: 60, image: "images/dress.jpg"},
+    {id: 3, name: "Comfortable Shoes", price: 45, image: "images/shoes.jpg"}
   ]
 
   function addToCart(name, price) {    
