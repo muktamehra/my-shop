@@ -1,26 +1,72 @@
 .hero {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&q=80');
+    background-size: cover;
+    background-position: right center;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 64px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-eyebrow {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #888888;
+    margin-bottom: 16px;
+}
+
+.hero h2 {
+    font-size: 52px;
+    font-weight: 800;
+    color: #222222;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+.hero-sub {
+    font-size: 16px;
+    color: #444444;
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
     background-color: #333333;
     color: #ffffff;
-    text-align: center;
-    padding: 80px 32px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 48px;
+    border: 2px solid #333333;
+    transition: background-color 0.3s, color 0.3s;
 }
-.hero h2 {
-    font-size: 42px;
-    margin-bottom: 16px;    
-}
-.hero p {
-    font-size: 18px;
-    color: #cccccc;
-    margin-bottom: 32px;
-}
-.cta-button {
-  color: #c9c5be;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
+
 .cta-button:hover {
-  text-decoration: underline;
-  color: #ffffff;
+    background-color: transparent;
+    color: #333333;
 }
