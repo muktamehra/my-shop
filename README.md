@@ -1,6 +1,6 @@
 # 🛍️ Fashion Mania — Mini Fashion Store
 
-Fashion Mania is a modern mini e-commerce web application built with React.
+Fashion Mania is a modern fashion e-commerce web application built with React.
 Users can browse fashion products, filter by categories, search items, sort by price, and manage a dynamic shopping cart.
 
 ---
